@@ -64,7 +64,7 @@ export default function ReportHistoryScreen() {
   );
 
   return (
-    <View style={[st.container, { marginBottom: tabBarHeight }]}>
+    <SafeAreaView style={[st.container, { marginBottom: tabBarHeight }]}>
       <ScrollView nestedScrollEnabled>
         <View style={st.reportContainer}>
           <Text style={[Typo.h4, st.reportHeader]}>Thống kê</Text>
@@ -169,7 +169,7 @@ export default function ReportHistoryScreen() {
           <View style={st.historyEmpty}></View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 

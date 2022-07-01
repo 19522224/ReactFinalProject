@@ -459,7 +459,7 @@ const FormAddNewItem = () => {
           </FormControl>
           <Button
             fontSize="xl"
-            my="2"
+            my="9"
             mx="auto"
             py="3"
             style={{

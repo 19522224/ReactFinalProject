@@ -14,7 +14,7 @@ import {
   formatMoney,
   getTotalTransactionsAmountInTimeRange,
 } from "src/utils";
-
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 const LimitScreen = () => {
   const tabBarHeight = useBottomTabBarHeight();
   const [showModal, setShowModal] = useState(false);
@@ -41,7 +41,7 @@ const LimitScreen = () => {
   );
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Hạn mức chi</Text>
         <FontAwesome
@@ -99,7 +99,7 @@ const LimitScreen = () => {
         limit={limit}
         setLimit={setLimit}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -9,7 +9,7 @@ import { useState } from "react";
 import { useToast } from "native-base";
 import AuthContext from "../../../hooks/login-signup/AuthContext";
 import axios from "axios";
-
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 const SettingScreen = () => {
   const { token } = useContext(AuthContext);
   const { settings, setSettings } = useContext(DataContext);
@@ -66,7 +66,7 @@ const SettingScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Cài đặt</Text>
         <Button
@@ -354,7 +354,7 @@ const SettingScreen = () => {
           </VStack>
         </View> */}
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 

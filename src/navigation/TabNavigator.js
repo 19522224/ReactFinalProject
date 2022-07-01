@@ -20,6 +20,7 @@ import MoreScreen from "src/screens/AppScreens/MoreTab/MoreScreen";
 import IonIcon from "@expo/vector-icons/Ionicons";
 import { useFocusEffect } from '@react-navigation/native';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 const Tab = createBottomTabNavigator();
 
 const getStyle = (focused, color, size) => {
@@ -64,9 +65,11 @@ const FadeInView = (props, { navigation }) => {
 };
 
 const FadeHomeScreen = (props, { navigation }) => (
-  <FadeInView>
-    <HomeScreen {...props} />
-  </FadeInView>
+  
+    <FadeInView>
+      <HomeScreen {...props} />
+    </FadeInView>
+  
 );
 
 const FadeIncomeExpenseScreen = (props, { navigation }) => (
@@ -82,9 +85,11 @@ const FadeWalletNavigator = (props, { navigation }) => (
 );
 
 const FadeMoreNavigator = (props, { navigation }) => (
+  
   <FadeInView>
     <MoreNavigator {...props} />
   </FadeInView>
+  
 );
 
 

@@ -22,7 +22,7 @@ import DataContext from "../../../hooks/data/DataContext";
 import Moment from "moment";
 import axios from "axios";
 import { useToast } from "native-base";
-
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 const AccountScreen = () => {
   const { logout, token } = useContext(AuthContext);
   const { profile, setProfile } = useContext(DataContext);
@@ -203,7 +203,7 @@ const AccountScreen = () => {
   }, [passwords.newPassword, passwords.oldPassword]);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <HStack
         justifyContent="space-between"
         alignItems="center"
@@ -342,7 +342,7 @@ const AccountScreen = () => {
           />
         )}
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

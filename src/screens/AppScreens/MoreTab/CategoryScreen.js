@@ -8,7 +8,7 @@ import Modals from "src/components/category/Modals";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { useContext } from "react";
 import DataContext from "../../../hooks/data/DataContext";
-
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 const CategoryScreen = () => {
   const { categories, setCategories } = useContext(DataContext);
   const [isEdit, setIsEdit] = useState(false);
@@ -18,7 +18,7 @@ const CategoryScreen = () => {
   const tabBarHeight = useBottomTabBarHeight();
 
   return (
-    <View style={{ ...styles.container, marginBottom: tabBarHeight }}>
+    <SafeAreaView style={{ ...styles.container, marginBottom: tabBarHeight }}>
       <View style={styles.header}>
         <Text style={styles.title}>Thêm hạng mục</Text>
         <View style={styles.addIcon}>
@@ -58,7 +58,7 @@ const CategoryScreen = () => {
         setCategory={setCategory}
         setCategories={setCategories}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 

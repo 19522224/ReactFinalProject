@@ -5,7 +5,7 @@ import React, { useContext, useState } from "react";
 import styles from "../../styles/home/HomeTopStyle";
 import DataContext from "../../hooks/data/DataContext";
 import { print, formatAmountOnly, formatCurrencyOnly } from "src/utils";
-
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 const HomeTop = () => {
   const [hideMoney, setHideMoney] = useState(false);
   const { profile, wallets, settings, username } = useContext(DataContext);
@@ -16,20 +16,21 @@ const HomeTop = () => {
   //print(useContext(DataContext));
 
   return (
-    <View style={styles.top}>
+    <SafeAreaView style={styles.top}>
       <View style={styles.title}>
         <Text style={styles.name}>
           Chào {profile?.fullName || username || "bạn"}!
         </Text>
-        {/* <View style={styles.iconWrapper}>
+        
+        {/* { <View style={styles.iconWrapper}>
           <Ionicons name="notifications" size={24} color="#ECFCE5" />
-        </View> */}
+        </View> } */}
       </View>
       <View style={styles.moneyContainer}>
         <View style={styles.content}>
           <Text style={styles.contentTitle}>Tổng số dư</Text>
           <Text style={styles.money}>
-            {hideMoney ? "***.***.***" : formattedAmount} {formattedCurrency}
+            {hideMoney ? "******" : formattedAmount} {formattedCurrency}
           </Text>
         </View>
         <TouchableOpacity
@@ -46,7 +47,7 @@ const HomeTop = () => {
           )}
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -6,7 +6,7 @@ import { FontAwesome } from "@expo/vector-icons";
 import FormAddNewItem from "src/components/income_expense/FormAddNewItem";
 import { Keyboard } from "react-native";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
-
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 // Navigation
 import { useNavigation } from "@react-navigation/native";
 
@@ -16,7 +16,7 @@ const IncomeExpenseScreen = () => {
   
   return (
     // <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-    <View style={{ ...styles.container, marginBottom: tabBarHeight }}>
+    <SafeAreaView style={{ ...styles.container, marginBottom: tabBarHeight }}>
       <View style={styles.header}>
         <Text style={styles.title}>Thêm thu chi</Text>
       </View>
@@ -28,7 +28,7 @@ const IncomeExpenseScreen = () => {
         <Text style={styles.history}>Xem lịch sử</Text>
       </Pressable>
       <FormAddNewItem />
-    </View>
+    </SafeAreaView>
     // </TouchableWithoutFeedback>
   );
 };

@@ -3,7 +3,6 @@ import { StyleSheet } from "react-native"
 const Typo = StyleSheet.create({
     h4: {
         fontSize: 18,
-        fontFamily: 'sans-serif',
         fontWeight: 'bold',
     },
     h5: {
